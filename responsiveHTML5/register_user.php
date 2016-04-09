@@ -6,6 +6,8 @@ if (isset($_POST['google_user'])) {
     require_once('./User.php');
     $user = new User();
     
+    //trim() removes unneccessry spacess.
+    //Optional: consider useing stripslashes() as well incase a users enters backslashes.
     $email = trim($_POST['email']);
     
     $user_name = trim($_POST['user_name']);
