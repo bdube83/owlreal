@@ -11,14 +11,17 @@ require_once('check_login_header.php');
 }
 </style>
 <head>
-	<title>Responsive Grid</title>
+	<title>Home</title>
+	<link rel="icon" href="top_comment.png">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="responsive-grid.css">
 	<script src="chatcom.js" type="text/javascript"  ></script>
+	<script src="aframe.js" type="text/javascript"  ></script>
 	<?php
 		require_once('chat_init.php');
 		require_once('chat.class.php');
 		$chat = new Chat();
+		//require_once('facebookcustomshare.php');
 		//require_once('bongs_error_handler.php');
 		//$chat->reportMessage(1);
 	?>
@@ -26,7 +29,7 @@ require_once('check_login_header.php');
 </head>
 <body  >
 <?php
-//require_once('facebookshare.php');
+require_once('facebookshare.php');
 ?>
 
 
@@ -61,8 +64,8 @@ require_once('check_login_header.php');
 				if(isset($_SESSION['welcome']) && $_SESSION['welcome'] == true){//initial welcome check
 					$username = $_SESSION['user_name'];
 					if(isset($_SESSION['new_user']) && $_SESSION['new_user'] == 'true'){
-						$response = 'Welcome to ScreenGrap. Hope you enjoy our site! ';
-						$img_response .= 'First press:<br>  <img src="https://screengrap-bdube83.c9users.io/responsiveHTML5/website_images/tut1.gif" alt="Tut" height="70" width="70"></p> then ctr+v';
+						$response = 'Welcome to Owlgram. Hope you enjoy the site! ';
+						//$img_response .= 'First press:<br>  <img src="https://screengrap-bdube83.c9users.io/responsiveHTML5/website_images/tut1.gif" alt="Tut" height="70" width="70"></p> then ctr+v';
 						$note = '<h3>App currntly only works well with Google-chrome.</h3>';
 					}else{
 						$response = 'Welcome back '.$username;
@@ -74,7 +77,7 @@ require_once('check_login_header.php');
 					echo $img_response;
 					$_SESSION['welcome'] = false;
 				}else{
-					echo '<h2>Create new title</h2>';
+					echo '<h2>Create new post</h2>';
 				}
 				?>
 				<p></p>
@@ -97,6 +100,7 @@ require_once('check_login_header.php');
 					?>
 				</div>
 				<div id="article0">
+
 				<?php
 					if(isset($_GET['delete_msg'])){
 						$chat_init->deleteMessage($_GET['id']);

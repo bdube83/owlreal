@@ -4,13 +4,16 @@ header("Content-Security-Policy: frame-ancestors 'none'", false);
 
 $chat_init = new Chat_init();
 ?>
-
+<link rel="icon" href="http://example.com/favicon.png">
 <link rel="stylesheet" type="text/css" href="https://screengrap-bdube83.c9users.io/responsiveHTML5/font-awesome-4.3.0/css/font-awesome.css">
 <link rel="stylesheet" type="text/css" href="https://screengrap-bdube83.c9users.io/responsiveHTML5/header.css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="dropzone.js"></script>
+<link rel="stylesheet" type="text/css" href="dropzone.css">
+
 <style>
 .dropbtn {
-    color: white;
+    color: #4267b2;
     font-size: inherit;
     border: none;
     cursor: pointer;
@@ -70,7 +73,7 @@ $chat_init = new Chat_init();
 		<li>
 			<a href="https://screengrap-bdube83.c9users.io/responsiveHTML5/index.php">
 				<div>
-					ScreenGrap
+					<img src="top_comment.png" style="vertical-align:middle;display:inline-block;padding-bottom:3px;" height="25" width="25">
 				</div>
 			</a>
 		</li>

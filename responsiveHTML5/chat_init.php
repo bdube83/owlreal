@@ -369,7 +369,7 @@ class Chat_init
 					$names_uplift = $this->getUpliftNames($iduser, $id, true);
 					if($names_uplift != ''){
 						$names_uplift = '<form method="get" action="responsiveHTML5Writers.php">'.
-										'<p style="float:left;font-size:13px;">Uplifted by:</p>'.
+										'<p style="float:left;font-size:13px;">Wowed by:</p>'.
 										$names_uplift.
 										'</form>';
 					}
@@ -404,6 +404,66 @@ class Chat_init
 							$delete_bt.
 							'</div>'.
 							'</div>';
+				}
+			$result->close();
+			}
+		}
+		$this->i=0;
+		return trim($response);
+	}
+	
+		public function getTopCommentHelper($id){
+		
+		$id = $this->mysqli->real_escape_string($id);
+		
+		$query = 'SELECT MAX(uplift) as uplift, comment_id, message_id, comment, posted_on, iduser, picpath '.
+				  'FROM comment WHERE message_id = "'.$id.'" LIMIT 1';
+				  
+		$response = 'No comments';
+		$uplift_str = $this->uplift_str($id);
+		if($result = $this->mysqli->query($query)){
+			if($result->num_rows > 0){
+				$response = "";
+				while($row = $result->fetch_array(MYSQLI_ASSOC)){
+					if($this->i ==$this->middle_limit){$this->i =0;break;}
+					$this->i++;
+					$id = $row['comment_id'];
+					$time = $row['posted_on'];
+					$comment = $row['comment'];
+					$uplift = $row['uplift'];
+					$iduser = $row['iduser'];
+					$picpath = $row['picpath'];
+					$name = $this->getName($iduser);
+					$delete_bt = $this->get_delete_bt($iduser, $id, 'Comment');
+					$uplift_strC = $this->uplift_strC($id);
+					if($comment != ""){
+						$response .= '<p />'.
+								'<div id="'.$id.'box_comment'.'" >'.
+									'<div class="box">'.
+										'<form method="get" action="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5Writers.php">'.
+										'<div style="color:gray;font-size:12px;"><img src="top_comment.png" style="vertical-align:middle;display:inline-block;padding-bottom:3px;" height="15" width="15">Top comment</div>'.
+										'</form>'.
+										$name.
+										'<h2>'.
+										$comment.
+										'<h2 />'.
+										'<form method="get" onsubmit="return process(\'UpliftComment\', \''.$id.'\',  \''.$iduser.'\', \''.$_SESSION['iduser'].'\');">'.
+										'<div id="'.$id.'upliftC">'.
+										'<button name="uplift_msgC" id="'.$id.'upliftC'.'"  type="submit" class="_button">'.
+											'<i class="fa fa-child fa-lg"></i>'.' '.
+											$uplift.' '.$uplift_str.
+										'</button>'.
+										'</div>'.
+										'<div id="'.$id.'comment'.'"></div>'.
+										'<div class="hide">'.
+											'<input class="hide" name="id" value="'.$id.'"/>'.//When there is no js.
+										'</div>'.
+										'</form>'.
+										'<p />'.
+									'</div>'.
+
+								'</div>';
+					}
 				}
 			$result->close();
 			}
@@ -624,6 +684,9 @@ public function getMyPrivateMessages($iduser){
 					$picpath = $row['picpath'];
 					$names_uplift = $this->getUpliftNames($iduser, $id);
 					
+					$top_comment = $this->getTopCommentHelper($id);
+
+					
 					$query = 'SELECT COUNT(comment_id) AS no_comments FROM comment WHERE message_id= "'.$id.'"';
 					if ($stmt = $this->mysqli->prepare($query)) {
 						$stmt->execute();
@@ -633,7 +696,7 @@ public function getMyPrivateMessages($iduser){
 						$stmt->close();
 					}
 					$name = $this->getName($iduser);
-					$response .= $this->messageBox($name, $id, $usertitle, $time, $message, $uplift, $no_comments,false, $picpath, false, $names_uplift);
+					$response .= $this->messageBox($name, $id, $usertitle, $time, $message, $uplift, $no_comments,false, $picpath, false, $names_uplift, false, $top_comment);
 				}
 				$result->close();
 			}
@@ -651,7 +714,7 @@ public function getMyPrivateMessages($iduser){
 		return $url_box;
 	}
 	
-	public function messageBox($name="", $id="", $usertitle="", $time="", $message="", $uplift="", $no_comments=false,$comment=false, $picpath=false,  $wall=false, $names_uplift='', $topic='false'){
+	public function messageBox($name="", $id="", $usertitle="", $time="", $message="", $uplift="", $no_comments=false,$comment=false, $picpath=false,  $wall=false, $names_uplift='', $topic='false', $top_comment=""){
 		$iduser = $this->getUserId($id);
 		$delete_bt = $this->get_delete_bt($iduser, $id);
 		$uplift_str = $this->uplift_str($id);
@@ -702,7 +765,11 @@ public function getMyPrivateMessages($iduser){
 		
 		$target_file_msg = 'img/'.$iduser.'_'.$id.'.gif';//js1
 		if (file_exists($target_file_msg)) {//js1
-			$target_img_box = '<a href="https://screengrap-bdube83.c9users.io/responsiveHTML5/'.$id.'"><img value="" type="image" src="https://screengrap-bdube83.c9users.io/responsiveHTML5/'.$target_file_msg.'"  style="padding:1px;width:98%;height:50%;"></a>';
+			$target_img_box = '<a href="https://screengrap-bdube83.c9users.io/responsiveHTML5/'.$id.'">
+								<iframe style="border: none;width:  100%;height:  500px;" allow="geolocation; microphone; camera; midi; vr; encrypted-media" src="afame.php?imgURL='.$target_file_msg.'"></iframe>
+								
+					    		</iframe>
+								</a>';
 		}
 		else{
 			$target_img_box = '';
@@ -714,7 +781,7 @@ public function getMyPrivateMessages($iduser){
 
 		if($names_uplift != ''){
 			$names_uplift = '<form method="get" action="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5Writers.php">'.
-							'<p style="float:left;font-size:13px;">Uplifted by:</p>'.
+							'<p style="float:left;font-size:13px;">Wowed by:</p>'.
 							$names_uplift.
 							'</form>';
 		}
@@ -730,9 +797,13 @@ public function getMyPrivateMessages($iduser){
 				'<p>'. $time.'</p>'.
 				$privatetab.
 				'<div class="message">'.
-				'<div class="inner_title">'.$usertitle.'</div>'.														
+				
+				'<div class="inner_title">'.$top_comment.'</div>'.														
 				$message.
+				
 				$target_img_box.//js1
+				'<div class="inner_title">'.$usertitle.'</div>'.														
+
 				'</div>'.
 				'<p />'.
 				'<div style="display:flex" >'.
@@ -788,9 +859,9 @@ public function getMyPrivateMessages($iduser){
 			$stmt->close();
 		}
 		if($no_user == 0){
-			return 'uplifts';
+			return 'Wow';
 		}else{
-			return'uplifts';
+			return'Wow';
 		}
 	}
 	
@@ -804,9 +875,9 @@ public function getMyPrivateMessages($iduser){
 			$stmt->close();
 		}
 		if($no_user == 0){
-			return 'uplifts';
+			return 'Wow';
 		}else{
-			return'uplifts';
+			return'Wow';
 		}
 	}	
 	
@@ -862,7 +933,7 @@ public function getMyPrivateMessages($iduser){
 	
 	public function upload_bt($url='responsiveHTML5BlogWall.php'){
 		$upload_bt =
-			'<form action=https://screengrap-bdube83.c9users.io/responsiveHTML5/"'.$url.'" method="post" enctype="multipart/form-data">'.
+			'<form action="https://screengrap-bdube83.c9users.io/responsiveHTML5/'.$url.'" method="post" enctype="multipart/form-data">'.
 				'Click to change your profile image: '.
 				'<input  type="file" name="fileToUpload" id="fileToUpload">'.
 				'</br>'.

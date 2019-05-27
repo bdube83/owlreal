@@ -23,16 +23,35 @@ function process(action, msg_id, user_id, current_user_id){
 	console.log(current_user_id);
 	if(action=="Uplift"){
 		document.getElementById(msg_id).innerHTML = '<i class="fa fa-spinner fa-pulse"></i> processing...';
+		
+		setTimeout(function(){ 
+			document.getElementById(msg_id).innerHTML  = "";
+		}, 3000);
 	}
 	if(action=="UpliftComment"){
 		document.getElementById(msg_id+'comment').innerHTML = '<i class="fa fa-spinner fa-pulse"></i> processing...';
+		setTimeout(function(){ 
+			document.getElementById(msg_id+'comment').innerHTML  = "";
+		}, 3000);
 	}	
 	
 	if(action=="ReportOne"){
 		document.getElementById(msg_id+'reportP').innerHTML = '<i class="fa fa-spinner fa-pulse"></i> sending report...';
+		setTimeout(function(){ 
+			document.getElementById(msg_id+'reportP').innerHTML  = "Done. We will review this post.";
+			setTimeout(function(){ 
+				document.getElementById(msg_id+'reportP').innerHTML  = "";
+			}, 3000);
+		}, 3000);
 	}
 	if(action=="ReportOneComment"){
 		document.getElementById(msg_id+'reportPC').innerHTML = '<i class="fa fa-spinner fa-pulse"></i>  sending report...';
+		setTimeout(function(){ 
+			document.getElementById(msg_id+'reportPC').innerHTML  = "Done. We will review this comment.";
+			setTimeout(function(){ 
+				document.getElementById(msg_id+'reportPC').innerHTML  = "";
+			}, 3000);
+		}, 3000);
 	}
 	
 	if(action=="DeleteOne"){
@@ -208,7 +227,7 @@ function handleResponse(){
 			var no_comment = no_comments.item(i).firstChild.data;
 			response = messageBox(uplift_str, delete_bt_test, name, iduser, msg_id, title, time, message, uplift, no_comment, false, propic, target_img_box, topic) + response;
 			if(mode_global=="Uplift"){
-				document.getElementById(msg_id).innerHTML = uplift+' Uplifts';
+				document.getElementById(msg_id).innerHTML = uplift+' Wow';
 			}
 		}
 		var article = document.getElementById('article0');
@@ -356,6 +375,38 @@ var imgnum = 1;
 var imgurl;
 var base64data;
 
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                // $('#imgurl')
+                //     .attr('src', e.target.result)
+                //     .width(150)
+                //     .height(200);
+                    
+                    var blob = e.target.result;
+    		        window.URL = window.URL || window.webkitURL;
+    		        var blobUrl = blob;
+                    
+                    
+                    var img = document.createElement('img');
+       		        img.src = blobUrl;
+       		        
+       		        $( "#log-box img" ).remove();
+       		        	
+    		        var logBox = document.getElementById('log-box');
+	        		logBox.appendChild(img);
+                  	document.getElementById("imgurl").innerHTML = '<input class="hide" id="imgurl" name="imgurl" value="'+blobUrl+'"/>';
+                  	imgurl = blobUrl;
+                  	base64data = reader.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+
 // Add the paste event listener
 window.addEventListener("paste", function (e) {
 	console.log(imgnum);
@@ -377,9 +428,9 @@ window.addEventListener("paste", function (e) {
 		        var reader = new window.FileReader();
  				reader.readAsDataURL(blob); 
  				reader.onloadend = function() {
-                base64data = reader.result;                
-                console.log(base64data );
-  }
+	                base64data = reader.result;                
+	                console.log(base64data );
+				}
 		        
 		        img.src = blobUrl;
 		        var logBox = document.getElementById('log-box');

@@ -9,6 +9,7 @@ $email = (isset($_COOKIE['name'])) ? $_COOKIE['name'] : '';
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
+		<link rel="icon" href="top_comment.png">
 		<title>Login Form</title>
 		<link rel="stylesheet" type="text/css" href="responsive-grid.css">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -51,16 +52,16 @@ require_once('facebookshare.php');
 			</aside>
 			<article id="article" class="sm-col-span-4 lg-col-span-2">
 				<center><h2>Welcome to ScreenGrap</h2></center>
-				<div class="box">
+				<!--<div class="box">-->
 
-					<img value="" type="image" src="website_images/Step_1.jpg" style="width:98%;height:50%;">
-					<img value="" type="image" src="website_images/Step_2.jpg" style="width:98%;height:50%;">
-					<img value="" type="image" src="website_images/Step_3.jpg" style="width:98%;height:50%;">
+				<!--	<img value="" type="image" src="website_images/Step_1.jpg" style="width:98%;height:50%;">-->
+				<!--	<img value="" type="image" src="website_images/Step_2.jpg" style="width:98%;height:50%;">-->
+				<!--	<img value="" type="image" src="website_images/Step_3.jpg" style="width:98%;height:50%;">-->
 					
-					<div class="fb-share-button" data-href="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5BlogLogIn.php" data-layout="button">
-					</div>
+				<!--	<div class="fb-share-button" data-href="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5BlogLogIn.php" data-layout="button">-->
+				<!--	</div>-->
 					
-					</div>
+				<!--</div>-->
 				<div class="box">
 					<h2 >Sign in</h2>
 					<form  method="post" action="responsiveHTML5BlogLogIn.php">
@@ -94,36 +95,36 @@ require_once('facebookshare.php');
 					</div>
 					
 				</div>
-				<h2>Post of the day</h2>
-				<p></p>
-				<div>
+				<!--<h2>Post of the day</h2>-->
+				<!--<p></p>-->
+				<!--<div>-->
 				<?php
-					echo $chat_login->getDayMessages(46);
-					echo $chat_login->getDayMessages(45);
-					echo $chat_login->getDayMessages(48);
+					// echo $chat_login->getDayMessages(46);
+					// echo $chat_login->getDayMessages(45);
+					// echo $chat_login->getDayMessages(48);
 				?>
-				</div>
+				<!--</div>-->
 
 			</article>
 			
 			<aside class="sm-col-span-4 lg-col-span-1">
-				<div class="box" >
-					<h1>Location vacant</h1>
-					<p>Contact us if you want to claim this space.<p>
-					<p>bdube83@gmail.com</p>
-				</div>
+				<!--<div class="box" >-->
+				<!--	<h1>Location vacant</h1>-->
+				<!--	<p>Contact us if you want to claim this space.<p>-->
+				<!--	<p>bdube83@gmail.com</p>-->
+				<!--</div>-->
 				
-				<div class="box" >
-					<h1>Proudly made in Africa</h1>
-					<p>The website is still new, If you incounter any problems please let us know.<p>
-					<p>bdube83@gmail.com</p>
-				</div>
+				<!--<div class="box" >-->
+				<!--	<h1>Proudly made in Africa</h1>-->
+				<!--	<p>The website is still new, If you incounter any problems please let us know.<p>-->
+				<!--	<p>bdube83@gmail.com</p>-->
+				<!--</div>-->
 				
-				<div class="box" >
-					<h1>Developers needed</h1>
-					<p>We call on all Software developers with a passion for programing to contribute towards the growth of this website.<p>
-					<p>bdube83@gmail.com</p>
-				</div>
+				<!--<div class="box" >-->
+				<!--	<h1>Developers needed</h1>-->
+				<!--	<p>We call on all Software developers with a passion for programing to contribute towards the growth of this website.<p>-->
+				<!--	<p>bdube83@gmail.com</p>-->
+				<!--</div>-->
 
 				
 			</aside>
@@ -132,7 +133,7 @@ require_once('facebookshare.php');
 </div>
 </body>
 
-			<center><a style="text-decoration:none; padding:5px;" class="_button" href="#" >more</a></center>
+			<!--<center><a style="text-decoration:none; padding:5px;" class="_button" href="#" >more</a></center>-->
 
 </html>
 <?php

@@ -9,6 +9,7 @@
 <?php
 $chat_login = new Chat_login();
 ?>
+<link rel="icon" href="top_comment.png">
 <link rel="stylesheet" type="text/css" href="font-awesome-4.3.0/css/font-awesome.css">
 <link rel="stylesheet" type="text/css" href="header.css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -17,7 +18,7 @@ $chat_login = new Chat_login();
 		<li>
 			<a href="index.php">
 				<div>
-					ScreenGrap
+					<img src="top_comment.png" style="vertical-align:middle;display:inline-block;padding-bottom:3px;" height="25" width="25">
 				</div>
 			</a>
 		</li>

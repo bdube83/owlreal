@@ -249,12 +249,18 @@ class Chat
 		}
 		$mysqli->close();
 	}
-	public function getComment($id){
+	public function getComment($id, $no_comment){
 		$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
 		$id = $mysqli->real_escape_string($id);
 		
+
 		$query = 'SELECT comment_id, message_id, comment, posted_on, iduser, uplift '.
 				  'FROM comment WHERE comment_id = "'.$id.'" ';// WHERE message_id =comment_id;
+				  
+  		if (isset($no_comment)) {
+			$query = 'SELECT top "'.$no_comment.'" MAX(uplift) as uplift, comment_id, message_id, comment, posted_on, iduser, uplift '.
+				  'FROM comment WHERE comment_id = "'.$id.'" ';// WHERE message_id =comment_id;
+		}
 		//XML response
 		$response = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>';
 		$response .= '<response>';

@@ -1,9 +1,11 @@
 /*Grid styles*/
 /*overflow: scroll;}*/
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap');
+
 .wrapper{
 	padding-left: 15px;
 	padding-right: 15px;
-	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+	font-family: 'Libre Franklin',sans-serif;
 	color: rgba(21,21,21,.9);
 }
 
@@ -145,12 +147,12 @@ textarea{
 }
 /*Site specific*/
 body{
-	background:  #EBF0F5;
+	background:  #f7f9f9;
 	margin: 0;
 	padding: 0;
 	font-size: 14px;
 	line-height: 18px;
-	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+	font-family: 'Libre Franklin', sans-serif;
 }
 
 .header_under{
@@ -163,7 +165,7 @@ body{
 }
 
 header {
-	background: linear-gradient(to left,rgba(54,194,182,0.96) 0,rgba(62,188,207,0.96) 100%);
+	background: #fff;
 	border-bottom: 1px solid rgba(0,0,0,.1);
 	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 	display: block;
@@ -173,7 +175,7 @@ header {
 }
 .header_login {
 	display:flex;
-	background: linear-gradient(to left,rgba(54,194,182,0.96) 0,rgba(62,188,207,0.96) 100%);
+	background: #4267b2;
 	border-bottom: 1px solid rgba(0,0,0,.1);
 	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 	display: block;
@@ -199,11 +201,11 @@ header > nav > ul > li {
 }
 
 header > nav > ul > li:hover {
-	background: rgba(58,162,173,1);
+	background: #4267b2;
 }
 
 header > nav > ul > li a + div {
-	background: linear-gradient(to bottom,rgba(58,162,173,1) 0,rgba(62,188,207,0.96) 100%);
+	background: #4267b2;
 	border-radius: 0 0 2px 2px;
 	box-shadow: 0 3px 1px rgba(0,0,0,.05);
 	display: none;
@@ -244,7 +246,7 @@ header > nav > ul > li a + div > ul > li:hover > a {
 
 header > nav > ul > li > a {
 	align-items: flex-start;
-	color: #fff;
+	color: #4267b2;
 	display: flex;
 	font-size: 1.55rem;
 	font-weight: 200;
@@ -259,7 +261,7 @@ header > nav > ul > li > a {
 	header > nav > ul > li > a > div > span {
 		color: rgba(255,255,255,.75);
 		display: block;
-		font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+		font-family: 'Libre Franklin', sans-serif;
 		font-size: .7rem;	
 		font-style: italic;
 		line-height: 1rem;
@@ -283,7 +285,7 @@ header > nav > ul > li > a {
 /*additions*/
 .box{
 	width: 88%;	
-	padding: 15px 6% 50px 6%;/*Change 15px for top padding*/
+	padding: 15px 6% 0px 6%;/*Change 15px for top padding*/
 	margin: 0 0 35px 0;
 	background: rgb(255, 255, 255);
 	border: 1px solid rgba(216, 222, 223, 0.6);
@@ -335,7 +337,7 @@ header > nav > ul > li > a {
 	cursor: pointer;	
 	background: rgb(247, 247, 247);
 	padding: 0px 0px;
-	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
+	font-family: 'Libre Franklin', sans-serif;
 	color: #fff;
 	font-size: 15px;	
 	border: 0.1px solid rgb(247, 247, 247);	
@@ -347,7 +349,7 @@ header > nav > ul > li > a {
 	cursor: pointer;	
 	background: rgb(247, 247, 247);
 	padding: 5px 5px;
-	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
+	font-family: 'Libre Franklin', sans-serif;
 	color: #fff;
 	font-size: 15px;	
 	border: 0.1px solid rgb(247, 247, 247);	
@@ -377,7 +379,7 @@ header > nav > ul > li > a {
 }
 
 ._button{
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: 'Libre Franklin', sans-serif;
 	list-style-type: none;	
 	cursor: pointer;	
 	padding-right: 5px;
@@ -387,20 +389,17 @@ header > nav > ul > li > a {
 	color: rgba(21,21,21,.9);
 	background: rgb(247, 247, 247);
 	border: 1px solid rgba(208, 223, 226,0.8);
-	-webkit-box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
-	   -moz-box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
-		box-shadow: 0pt 2px 5px rgba(247, 247, 220,  0.7),	0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
 
 }
 
 ._button:hover {
 	color: rgba(255,255,255,.9);
-	background: rgba(58,162,173,1);
+	background: #4267b2;
 }
 
 
 ._button2{
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: 'Libre Franklin', sans-serif;
 	list-style-type: none;	
 	padding-right: 1px;
 	padding-bottom: 5px;
@@ -434,7 +433,7 @@ header > nav > ul > li > a {
 	width: 100%;
 	cursor: pointer;	
 	padding: 0px 0px;
-	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
+	font-family: 'Libre Franklin', sans-serif;
 	font-size: 15px;	
 	background: rgb(247, 247, 247);
 	border: 1px solid rgba(147, 184, 189,0.8);
@@ -470,14 +469,10 @@ header > nav > ul > li > a {
 }
 
 .inner_title{
-	color: #d3d3d3;
 	padding-bottom: 5px;
 	padding-top: 5px;
-	margin-left: 1px;
-	font-size: 20px;
-	text-align: center;	
-	background: rgba(58,162,173,1);
-	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+	font-size: 15px;
+	font-family: 'Libre Franklin', sans-serif;
 	width: 98%;
 	word-wrap: break-word;
 }
@@ -490,7 +485,7 @@ header > nav > ul > li > a {
 	word-spacing: 5px;
 	text-align: left;
 	background: rgb(255, 255, 255);
-	border: 1px solid rgba(147, 184, 189,0.8);
+	/*border: 1px solid rgba(147, 184, 189,0.8);*/
 	-webkit-box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(255, 255, 255, 0.4) inset;
 	   -moz-box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(255, 255, 255, 0.4) inset;
 	        /*box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(255, 255, 255, 0.4) inset;*/
@@ -507,13 +502,15 @@ header > nav > ul > li > a {
 }
 
 #log-box img {
-	width: 100%;
+	width: 50%;
+	height: 50%;
+	
 }
 
 #googleTop {
     position: absolute;
     font-size: 18px;
-    top: 1px;
+    top: 10px;
     right: 5px;
 
 }

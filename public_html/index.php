@@ -54,7 +54,7 @@ require_once('check_login_header.php');
 					echo '<h2>'.$response.'</h2>';
 					$_SESSION['welcome'] = false;
 				}else{
-					echo '<h2>Create new title</h2>';
+					echo '<h2>Create new post</h2>';
 				}
 				?>
 				<p></p>
