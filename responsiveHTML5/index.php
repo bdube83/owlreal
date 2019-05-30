@@ -64,8 +64,8 @@ require_once('facebookshare.php');
 				if(isset($_SESSION['welcome']) && $_SESSION['welcome'] == true){//initial welcome check
 					$username = $_SESSION['user_name'];
 					if(isset($_SESSION['new_user']) && $_SESSION['new_user'] == 'true'){
-						$response = 'Welcome to Owlgram. Hope you enjoy the site! ';
-						//$img_response .= 'First press:<br>  <img src="https://screengrap-bdube83.c9users.io/responsiveHTML5/website_images/tut1.gif" alt="Tut" height="70" width="70"></p> then ctr+v';
+						$response = 'Welcome to owlreal';
+						//$img_response .= 'First press:<br>  <img src="http://owlreal.com/website_images/tut1.gif" alt="Tut" height="70" width="70"></p> then ctr+v';
 						$note = '<h3>App currntly only works well with Google-chrome.</h3>';
 					}else{
 						$response = 'Welcome back '.$username;

@@ -8,7 +8,7 @@ function bongsErrorHandler($number, $text, $theFile, $theLine){
 					'Message: '.$text. chr(10).
 					'File: '.$theFile. chr(10).
 					'Line: '.$theLine;
-	//echo $errorMessage;
+	echo $errorMessage;
 	exit;
 }
 

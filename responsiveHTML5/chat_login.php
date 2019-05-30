@@ -160,7 +160,7 @@ class Chat_login
 	public function messageBox($name="", $id="", $usertitle="", $time="", $message="", $uplift="", $no_comments=false,$comment=false, $picpath=false,  $wall=false){
 		$iduser = $this->getUserId($id);
 		$delete_bt = "";
-		$uplift_str = "uplifts";
+		$uplift_str = "Wow";
 		$upload_bt = '';
 		if(preg_match("#^https?://(?:www\.)?youtube.com#", $message)){
 			$message = $this->youtube_convert($message);

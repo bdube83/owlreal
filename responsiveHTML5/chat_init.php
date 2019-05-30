@@ -178,7 +178,7 @@ class Chat_init
 						$count = $row['count(topic)'];
 						$message = $this->getTopTopicsLinksHelper($topic);
 						$topic_ls .= '<div class = "box3">'.
-									'<form method="get" action="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5TopTopics.php">'.
+									'<form method="get" action="http://owlreal.com/responsiveHTML5TopTopics.php">'.
 									'<li class="link_button">'.
 									'<input class="link_button"  type="submit" name="top_topics" value="'.$topic.' has '.$count.' posts" >'.//change if one post e.g love has 1 posts							
 									'</li>'.
@@ -263,7 +263,7 @@ class Chat_init
 						}
 						//$message = $this->getTopTopicsLinksHelper($topic);
 						$user_ls .= '<div class = "box3">'.
-									'<form method="get" action="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5TopWriters.php">'.
+									'<form method="get" action="http://owlreal.com/responsiveHTML5TopWriters.php">'.
 									'<li class="link_button">'.
 									'<input class="link_button"  type="submit" name="top_writers" value="'.$user_name.' has '.$count.' posts" >'.//change if one post e.g love has 1 posts							
 									'</li>'.
@@ -379,7 +379,7 @@ class Chat_init
 					$response .= '<p />'.
 							'<div id="'.$id.'box_comment'.'" >'.
 							'<div class="box">'.
-							'<form method="get" action="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5Writers.php">'.
+							'<form method="get" action="http://owlreal.com/responsiveHTML5Writers.php">'.
 							'<div>'.
 							 //'<input type="image" src="'.$picpath.'"  style="width:50px;height:40px;float:left">'.
 							 $name.'</div>'.
@@ -440,7 +440,7 @@ class Chat_init
 						$response .= '<p />'.
 								'<div id="'.$id.'box_comment'.'" >'.
 									'<div class="box">'.
-										'<form method="get" action="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5Writers.php">'.
+										'<form method="get" action="http://owlreal.com/responsiveHTML5Writers.php">'.
 										'<div style="color:gray;font-size:12px;"><img src="top_comment.png" style="vertical-align:middle;display:inline-block;padding-bottom:3px;" height="15" width="15">Top comment</div>'.
 										'</form>'.
 										$name.
@@ -735,7 +735,7 @@ public function getMyPrivateMessages($iduser){
 			//$this->log =  '<h1>'.$no_comments.'</h1>';
 		}else{
 			//$this->log =  '<h1>'.$no_comments.'</h1>';
-			$comment_btn = '<form method="get" action="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5BlogComment.php">'.
+			$comment_btn = '<form method="get" action="http://owlreal.com/comment.php">'.
 			
 							'<button type="submit" class="_button">'.
 								'<i class="fa fa-comments fa-lg"></i>'.' '.
@@ -765,7 +765,7 @@ public function getMyPrivateMessages($iduser){
 		
 		$target_file_msg = 'img/'.$iduser.'_'.$id.'.gif';//js1
 		if (file_exists($target_file_msg)) {//js1
-			$target_img_box = '<a href="https://screengrap-bdube83.c9users.io/responsiveHTML5/'.$id.'">
+			$target_img_box = '<a href="http://owlreal.com/'.$id.'">
 								<iframe style="border: none;width:  100%;height:  500px;" allow="geolocation; microphone; camera; midi; vr; encrypted-media" src="afame.php?imgURL='.$target_file_msg.'"></iframe>
 								
 					    		</iframe>
@@ -780,7 +780,7 @@ public function getMyPrivateMessages($iduser){
 		}
 
 		if($names_uplift != ''){
-			$names_uplift = '<form method="get" action="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5Writers.php">'.
+			$names_uplift = '<form method="get" action="http://owlreal.com/responsiveHTML5Writers.php">'.
 							'<p style="float:left;font-size:13px;">Wowed by:</p>'.
 							$names_uplift.
 							'</form>';
@@ -789,9 +789,9 @@ public function getMyPrivateMessages($iduser){
 				'<div class="box">'.
 				//'<div class="box2">'.
 				$upload_bt.
-				'<form method="get" action="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5Writers.php">'.
+				'<form method="get" action="http://owlreal.com/responsiveHTML5Writers.php">'.
 				'<div>'.
-				 '<input value="" type="image" src="https://screengrap-bdube83.c9users.io/responsiveHTML5/'.$target_file.'"  style="width:50px;height:40px;float:left">'.
+				 '<input value="" type="image" src="http://owlreal.com/'.$target_file.'"  style="width:50px;height:40px;float:left">'.
                  $name.'</div>'.
 				'</form>'.
 				'<p>'. $time.'</p>'.
@@ -824,7 +824,7 @@ public function getMyPrivateMessages($iduser){
 
 				$delete_bt.
 				'<div class="fb-share-button" 
-					data-href="https://screengrap-bdube83.c9users.io/responsiveHTML5/'.$id.'/"
+					data-href="http://owlreal.com/'.$id.'/"
 				data-layout="button_count">
 				</div>'.
 				'</div>'.
@@ -933,7 +933,7 @@ public function getMyPrivateMessages($iduser){
 	
 	public function upload_bt($url='responsiveHTML5BlogWall.php'){
 		$upload_bt =
-			'<form action="https://screengrap-bdube83.c9users.io/responsiveHTML5/'.$url.'" method="post" enctype="multipart/form-data">'.
+			'<form action="http://owlreal.com/'.$url.'" method="post" enctype="multipart/form-data">'.
 				'Click to change your profile image: '.
 				'<input  type="file" name="fileToUpload" id="fileToUpload">'.
 				'</br>'.

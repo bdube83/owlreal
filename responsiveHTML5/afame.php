@@ -4,8 +4,8 @@
 
 <a-scene background="color: #4267b2">
   <a-assets>
-    <img id="my-image" src="https://screengrap-bdube83.c9users.io/responsiveHTML5/<?php echo $_GET['imgURL'];?>">
-    <!--<img id="my-image" src="https://screengrap-bdube83.c9users.io/responsiveHTML5/testMihl.png">-->
+    <img id="my-image" src="http://owlreal.com/<?php echo $_GET['imgURL'];?>">
+    <!--<img id="my-image" src="http://owlreal.com/testMihl.png">-->
   </a-assets>
 
   <!-- Using the asset management system. -->

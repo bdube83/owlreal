@@ -560,9 +560,9 @@ class Chat
 			$stmt->close();
 		}
 		if($no_user == 0){
-			return 'uplifts';
+			return 'Wow';
 		}else{
-			return'uplifts';
+			return'Wow';
 		}
 	}
 	
@@ -576,9 +576,9 @@ class Chat
 			$stmt->close();
 		}
 		if($no_user == 0){
-			return 'uplifts';
+			return 'Wow';
 		}else{
-			return'uplifts';
+			return'Wow';
 		}
 	}
 	

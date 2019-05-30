@@ -17,7 +17,7 @@ function createXmlHttpRequestObject(){
 	
 function process(action, msg_id, user_id, current_user_id){
 	if(current_user_id == '' || !current_user_id){
-		window.location.href = "https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5BlogLogIn.php";//cannot go back.$	
+		window.location.href = "http://owlreal.com/responsiveHTML5BlogLogIn.php";//cannot go back.$	
 		return;
 	}
 	console.log(current_user_id);
@@ -77,7 +77,7 @@ function process(action, msg_id, user_id, current_user_id){
 				var parameters = "mode="+action+"&msg_id="+msg_id+"&user_id="+user_id+"&current_user_id="+current_user_id;
 			}
 			
-			xmlHttp.open("GET","https://screengrap-bdube83.c9users.io/responsiveHTML5/chat.php?"+parameters,true);
+			xmlHttp.open("GET","http://owlreal.com/chat.php?"+parameters,true);
 			xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			//xmlHttp.send(parameters);
 			xmlHttp.onreadystatechange = setTimeout(handleServerResponse, 2000);
@@ -253,7 +253,7 @@ function messageBox(uplift_str, delete_bt_test, name, iduser, id, usertitle, tim
 			var comment_btn = "";
 		}else{
 			//echo '<h1>'.no_comments.'</h1>';
-			comment_btn = '<form method="get" action="responsiveHTML5BlogComment.php">'+
+			comment_btn = '<form method="get" action="comment.php">'+
 							'<button type="submit" class="_button">'+
 								'<i class="fa fa-comments fa-lg"></i>'+' '+
 								no_comments+' comments'+
@@ -313,7 +313,7 @@ function messageBox(uplift_str, delete_bt_test, name, iduser, id, usertitle, tim
 
 				delete_bt+
 				'<div class="fb-share-button"'+ 
-					'data-href="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5BlogComment.php?id="'+id+'"'+
+					'data-href="http://owlreal.com/comment.php?id="'+id+'"'+
 				'data-layout="button_count">'+
 				'</div>'+
 				'</div>'+
@@ -475,7 +475,7 @@ function uploadImage(){
 
 		// Using JSONP to connect to register_user.php
 		$.ajax({
-		  url: "https://screengrap-bdube83.c9users.io/responsiveHTML5/uploadTitlePic.php",
+		  url: "http://owlreal.com/uploadTitlePic.php",
 		          
 		     //prepering data to send.
 		  type: 'POST',
@@ -491,9 +491,9 @@ function uploadImage(){
 		  success: function( response_login ) {
 		      console.log(response_login);
 		      if(privatePost == true) {
-	          	window.location.href = "https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5BlogPrivateWall.php";//cannot go back.
+	          	window.location.href = "http://owlreal.com/responsiveHTML5BlogPrivateWall.php";//cannot go back.
 		      }else{
-            	window.location.href = "https://screengrap-bdube83.c9users.io/responsiveHTML5/index.php";//cannot go back.$
+            	window.location.href = "http://owlreal.com/index.php";//cannot go back.$
 		      }
 	          //window.location.href = "transport_booking.php"; //can go back.
 	

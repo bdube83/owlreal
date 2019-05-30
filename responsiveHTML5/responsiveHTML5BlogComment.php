@@ -5,9 +5,10 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Responsive Grid</title>
+	<title>Owlreal</title>
+	<link rel="icon" href="top_comment.png">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" type="text/css" href="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsive-grid.css">
+	<link rel="stylesheet" type="text/css" href="http://owlreal.com/responsive-grid.css">
 	<?php
 		require_once('chat_init.php');
 		//require_once('bongs_error_handler.php');
@@ -77,7 +78,7 @@ require_once('facebookshare.php');
 		</div>
 	</div>
 </div>
-<script src="https://screengrap-bdube83.c9users.io/responsiveHTML5/chatcom.js" type="text/javascript"  ></script>
+<script src="http://owlreal.com/chatcom.js" type="text/javascript"  ></script>
 
 <noscript>
 	<a href="#">No javaScript</a>

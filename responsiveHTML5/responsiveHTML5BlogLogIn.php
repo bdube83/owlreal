@@ -51,14 +51,14 @@ require_once('facebookshare.php');
 				</div>
 			</aside>
 			<article id="article" class="sm-col-span-4 lg-col-span-2">
-				<center><h2>Welcome to ScreenGrap</h2></center>
+				<center><h2>Welcome to owlreal</h2></center>
 				<!--<div class="box">-->
 
 				<!--	<img value="" type="image" src="website_images/Step_1.jpg" style="width:98%;height:50%;">-->
 				<!--	<img value="" type="image" src="website_images/Step_2.jpg" style="width:98%;height:50%;">-->
 				<!--	<img value="" type="image" src="website_images/Step_3.jpg" style="width:98%;height:50%;">-->
 					
-				<!--	<div class="fb-share-button" data-href="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5BlogLogIn.php" data-layout="button">-->
+				<!--	<div class="fb-share-button" data-href="http://owlreal.com/responsiveHTML5BlogLogIn.php" data-layout="button">-->
 				<!--	</div>-->
 					
 				<!--</div>-->
@@ -172,8 +172,8 @@ require_once('facebookshare.php');
 					if ($result = $mysqli->query($sql)) {
 						if($result->num_rows > 0){
 							while($row = $result->fetch_array(MYSQLI_ASSOC)){
-								$salt = $row['password'];
-								if (crypt($password, $salt) == $salt) {
+								$hash = $row['password'];
+								if (password_verify($password, $hash)) {
 									$sql = 'SELECT name, iduser FROM users WHERE email = "'.$email.'"';
 									if ($result = $mysqli->query($sql)) {
 										if($result->num_rows > 0){
@@ -248,7 +248,7 @@ require_once('facebookshare.php');
 		$username_reg = $mysqli->real_escape_string($username_reg);
 		$email_reg = $mysqli->real_escape_string($email_reg);
 		$password_reg1 = $mysqli->real_escape_string($password_reg1);
-		$password_reg1 = crypt($password_reg1);
+		$password_reg1 = password_hash($password_reg1, PASSWORD_DEFAULT);
 		// check if usernames exists
 		$sql = 'SELECT COUNT(*) AS email_count FROM users WHERE email = "'.$email_reg.'"';
 		if ($result = $mysqli->query($sql)) {
@@ -354,7 +354,7 @@ require_once('facebookshare.php');
           jQuery(document).ready(function(){
                // Using JSONP to connect to register_user.php
               $.ajax({
-                  url: "https://screengrap-bdube83.c9users.io/responsiveHTML5/register_user.php",
+                  url: "http://owlreal.com/register_user.php",
                           
                      //prepering data to send.
                   type: 'POST',

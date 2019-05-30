@@ -8,10 +8,10 @@
   },
   "app": {
     "urls": [
-      "https://screengrap-bdube83.c9users.io/responsiveHTML5/index.php"
+      "http://owlreal.com/index.php"
     ],
     "launch": {
-      "web_url": "https://screengrap-bdube83.c9users.io/responsiveHTML5/index.php"
+      "web_url": "http://owlreal.com/index.php"
     }
   },
     "permissions": [

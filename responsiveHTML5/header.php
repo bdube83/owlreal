@@ -5,8 +5,8 @@ header("Content-Security-Policy: frame-ancestors 'none'", false);
 $chat_init = new Chat_init();
 ?>
 <link rel="icon" href="http://example.com/favicon.png">
-<link rel="stylesheet" type="text/css" href="https://screengrap-bdube83.c9users.io/responsiveHTML5/font-awesome-4.3.0/css/font-awesome.css">
-<link rel="stylesheet" type="text/css" href="https://screengrap-bdube83.c9users.io/responsiveHTML5/header.css">
+<link rel="stylesheet" type="text/css" href="http://owlreal.com/font-awesome-4.3.0/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="http://owlreal.com/header.css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="dropzone.js"></script>
 <link rel="stylesheet" type="text/css" href="dropzone.css">
@@ -61,17 +61,17 @@ $chat_init = new Chat_init();
 			</a
 			><div>
 				<ul>
-					<li><a href="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5BlogWall.php">My Profile</a></li>
-					<li><a href="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5TopTitles.php">Top Titles</a></li>
-					<li><a href="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5NewTitles.php">New Titles</a></li>
-					<li><a href="https://screengrap-bdube83.c9users.io/responsiveHTML5/responsiveHTML5BlogPrivateWall.php">My Private Wall</a></li>
-					<li><a href="https://screengrap-bdube83.c9users.io/responsiveHTML5/logoff.php">Log-off</a></li>
+					<li><a href="http://owlreal.com/responsiveHTML5BlogWall.php">My Profile</a></li>
+					<li><a href="http://owlreal.com/responsiveHTML5TopTitles.php">Top Titles</a></li>
+					<li><a href="http://owlreal.com/responsiveHTML5NewTitles.php">New Titles</a></li>
+					<li><a href="http://owlreal.com/responsiveHTML5BlogPrivateWall.php">My Private Wall</a></li>
+					<li><a href="http://owlreal.com/logoff.php">Log-off</a></li>
 					
 				</ul>
 			</div>
 		</li>
 		<li>
-			<a href="https://screengrap-bdube83.c9users.io/responsiveHTML5/index.php">
+			<a href="http://owlreal.com/index.php">
 				<div>
 					<img src="top_comment.png" style="vertical-align:middle;display:inline-block;padding-bottom:3px;" height="25" width="25">
 				</div>
@@ -88,7 +88,7 @@ $chat_init = new Chat_init();
 			?>
 		</button>
   		<div class="dropdown-content">
-   			<a href="https://screengrap-bdube83.c9users.io/responsiveHTML5/logoff.php">Sign-out</a>
+   			<a href="http://owlreal.com/logoff.php">Sign-out</a>
     	</div>
 </div>
 </div>
